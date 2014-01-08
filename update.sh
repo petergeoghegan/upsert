@@ -21,6 +21,7 @@ tuples=1000000
 pretuples=100000
 
 echo "running $0 benchmark $count times"
+echo "Test upsert as a replacement for update...no insert part, for comparison against raw update performance"
 echo "${bold}UPSERT with no inserts, only updates, vs. equivalent updates${normal}"
 while [ $count -gt 0 ]
 do

@@ -2,9 +2,6 @@
 #
 # Test upsert as a replacement for insert...no update part, for comparison
 # against raw insert for performance
-#
-# This benchmark appears to indicate that even with heavyweight page locks, the
-# performance of these two cases is remarkably similar
 if [[ $1 ]]; then
 	count=$1
 else
@@ -16,6 +13,7 @@ normal=`tput sgr0`
 NC='\e[0m' # No Color
 
 echo "running $0 benchmark $count times"
+echo "Test upsert as a replacement for insert...no update part, for comparison against raw insert performance"
 echo "${bold}Note that a SERIAL PK is used here, to maximize lock contention ${normal}"
 while [ $count -gt 0 ]
 do
