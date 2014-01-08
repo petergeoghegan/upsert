@@ -19,3 +19,8 @@ fi
 if [[ $? != 0 ]]; then
 	exit 1
 fi
+
+./insert.sh			3
+if [[ $? != 0 ]]; then
+	exit 1
+fi
