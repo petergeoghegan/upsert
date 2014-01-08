@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# benchsimple variant. Merge column is text here, implying that comparisons are
+# considerably more expensive, as well as that btree index tuples are of
+# variable size, which could conceivably be broken independently of other
+# things.
 if [[ $1 ]]; then
 	count=$1
 else
@@ -12,7 +17,7 @@ do
 	psql -c "drop table if exists foo;"
 	echo 'create unlogged table foo
 	(
-	merge int4 primary key,
+	merge text primary key,
 	b int4,
 	c text
 	);' | psql
