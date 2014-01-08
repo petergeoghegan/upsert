@@ -3,6 +3,16 @@
 # Client count, scale, and duration are not configurable because they're
 # generally thought to be essential to the nature of the thing being tested.
 
+./insert.sh			3
+if [[ $? != 0 ]]; then
+	exit 1
+fi
+
+./update.sh			3
+if [[ $? != 0 ]]; then
+	exit 1
+fi
+
 ./simple.sh			3
 if [[ $? != 0 ]]; then
 	exit 1
@@ -16,11 +26,6 @@ if [[ $? != 0 ]]; then
 	exit 1
 fi
 ./text.sh			3
-if [[ $? != 0 ]]; then
-	exit 1
-fi
-
-./insert.sh			3
 if [[ $? != 0 ]]; then
 	exit 1
 fi
