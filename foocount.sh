@@ -8,17 +8,23 @@ dupcount=`psql -c "set enable_indexscan = off; set enable_indexonlyscan = off; s
 
 red='\e[0;31m'
 green='\e[0;32m'
+bold=`tput bold`
+normal=`tput sgr0`
 NC='\e[0m' # No Color
 
-psql -c "set enable_indexscan = off; set enable_indexonlyscan = off; select count(*) as total_count from foo;"
+total_count=`psql -c "set enable_indexscan = off; set enable_indexonlyscan = off; select count(*) as total_count from foo;"`
+
+echo "${bold}$total_count ${normal}"
 
 if [[ "$dupcount" == *"0 rows"* ]]
 then
-	echo -e "\n${green}Test passed:${NC}\n"
+	echo -e "${green}Test passed:${NC}\n"
 	echo "$dupcount"
+	# spacing newline
+	echo ""
 	exit 0
 else
-	echo -e "\n${red}Test failed:${NC}\n"
+	echo -e "${red}Test failed:${NC}\n"
 	echo "$dupcount"
 	exit 1
 fi

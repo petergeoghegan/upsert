@@ -23,5 +23,8 @@ do
 	);' | psql
 	pgbench -f benchsimple.sql -c 8 -T $rand -n -s 150000
 	./foocount.sh
+	if [[ $? != 0 ]]; then
+		exit 1
+	fi
 	count=$(( $count - 1 ))
 done
