@@ -1,10 +1,5 @@
 #!/bin/bash
 #
-# The point of this benchmark is in large part to get a sense of the
-# performance overhead of unnecessarily value locking a serial PK, where
-# presumably the sequential serial values represent a worse case for value
-# locking.  In the btree locking patch, we lock primary key last and release it
-# first, partly in anticipation of this problem.
 if [[ $1 ]]; then
 	count=$1
 else
