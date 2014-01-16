@@ -8,7 +8,7 @@ fi
 echo "running $0 benchmark $count times"
 while [ $count -gt 0 ]
 do
-	rand=`shuf -i 3-6 -n 1`
+	rand=`shuf -i 60-120 -n 1`
 	echo "trying $0 $rand second run"
 	psql -c "drop table if exists foo;"
 	echo 'create unlogged table foo
