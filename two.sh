@@ -22,7 +22,7 @@ do
 	merge text unique,
 	payload text
 	);' | psql
-	pgbench -f benchtwo.sql -c 8 -T $rand -n -s 1
+	pgbench -f benchtwo.sql -j 4 -c 8 -T $rand -n -s 1
 	./foocount.sh
 	if [[ $? != 0 ]]; then
 		exit 1

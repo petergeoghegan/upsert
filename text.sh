@@ -21,7 +21,7 @@ do
 	b int4,
 	c text
 	);' | psql
-	pgbench -f benchsimple.sql -c 8 -T $rand -n -s 150000
+	pgbench -f benchsimple.sql -j 4 -c 8 -T $rand -n -s 150000
 	./foocount.sh
 	if [[ $? != 0 ]]; then
 		exit 1

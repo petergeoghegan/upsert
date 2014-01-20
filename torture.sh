@@ -24,7 +24,7 @@ do
 	payload text
 	);' | psql
 	psql -c "create index ddd on foo(payload);"
-	pgbench -f benchtorture.sql -c 8 -T $rand -n -s 1
+	pgbench -f benchtorture.sql -j 4 -c 8 -T $rand -n -s 1
 	./foocount.sh
 	if [[ $? != 0 ]]; then
 		exit 1

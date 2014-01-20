@@ -35,7 +35,7 @@ do
 	c text
 	);' | psql
 	echo "${bold}pre-inserting tuples to update${normal}"
-	pgbench -f benchplaininsert.sql -c 10 -t $pretuples -n -s $tuples > /dev/null
+	pgbench -f benchplaininsert.sql -j 4 -c 10 -t $pretuples -n -s $tuples > /dev/null
 	psql -c "checkpoint;"
 	pgbench -f benchupdate.sql -c 8 -T $seconds -n -s $tuples
 	echo "trying $seconds second run ${bold}(traditional updates, equivalent to master)${normal}"

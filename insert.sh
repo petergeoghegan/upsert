@@ -27,7 +27,7 @@ do
 	b int4,
 	c text
 	);' | psql
-	pgbench -f benchinsert.sql -c 8 -T $seconds -n -s 150000
+	pgbench -f benchinsert.sql -j 4 -c 8 -T $seconds -n -s 150000
 	if [[ $? != 0 ]]; then
 		exit 1
 	fi

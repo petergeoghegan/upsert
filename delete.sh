@@ -20,7 +20,7 @@ do
 	merge text primary key,
 	c text
 	);' | psql
-	pgbench -f benchdelete.sql -c 64 -t $rand -n -s 15000
+	pgbench -f benchdelete.sql -j 4 -c 64 -t $rand -n -s 15000
 	./foocount.sh
 	if [[ $? != 0 ]]; then
 		exit 1
