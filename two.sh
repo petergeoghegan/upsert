@@ -24,6 +24,8 @@ do
 	);' | psql
 	pgbench -f benchtwo.sql -j 4 -c 8 -T $rand -n -s 1
 	./foocount.sh
+	psql -c "select bt_parent_index_verify('foo_pkey');"
+	psql -c "select bt_leftright_verify('foo_pkey');"
 	if [[ $? != 0 ]]; then
 		exit 1
 	fi
