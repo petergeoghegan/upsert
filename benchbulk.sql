@@ -85,6 +85,6 @@ with rej as (
 	(1000 * random(), 5, 'foofoofoo'),
 	(1000 * random(), 5, 'foofoofoo'),
 	(1000 * random(), 5, 'foofoofoo'),
-	(1000 * random(), 5, 'foofoofoo')
+	(1000 * random(), 5, 'foofoofoo'),
 	on duplicate key lock for update returning rejects *)
 update foo set c = rej.c from rej where foo.merge = rej.merge;
