@@ -3,4 +3,4 @@
 \setrandom irec 1 :extent
 -- merge is a SERIAL column...we're testing how foo performs as a "plain
 -- update" here -- inserts are impossible.
-with rej as(insert into foo(merge, b, c) values(:rec, :rec * random(), 'never') on conflict select * for update) update foo set c = 'update' from rej where foo.merge = rej.merge;
+insert into foo(merge, b, c) values(:rec, :rec * random(), 'never') on conflict update set c = 'update';
