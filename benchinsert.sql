@@ -4,4 +4,4 @@
 -- merge is a SERIAL column...we're testing how foo performs as a plain insert
 -- here -- no updates are possible. IGNORE would behave the same, and obviously
 -- would never lock either.
-insert into foo(b, c) values(:rec, 'foofoofoo') on conflict update set c = c;
+insert into foo(b, c) values(:rec, 'foofoofoo') on conflict update set b = :rec, c = c;

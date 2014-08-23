@@ -5,10 +5,13 @@
 
 # runs per benchmark
 runs=3
-for f in simple.sh insert.sh update.sh two.sh smalltwo.sh text.sh torture.sh
+while [ 1 ]
 do
-	./$f $runs
-	if [[ $? != 0 ]]; then
-		exit 1
-	fi
+	for f in simple.sh two.sh smalltwo.sh text.sh torture.sh
+	do
+		./$f $runs
+		if [[ $? != 0 ]]; then
+			exit 1
+		fi
+	done
 done
