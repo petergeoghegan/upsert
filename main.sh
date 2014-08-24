@@ -7,7 +7,7 @@
 runs=3
 while [ 1 ]
 do
-	for f in simple.sh two.sh smalltwo.sh text.sh torture.sh
+	for f in simple.sh two.sh smalltwo.sh text.sh
 	do
 		./$f $runs
 		if [[ $? != 0 ]]; then
@@ -15,3 +15,7 @@ do
 		fi
 	done
 done
+
+# Other interesting tests not run here:
+# torture.sh
+# "Vs vanilla insert/update" tests
