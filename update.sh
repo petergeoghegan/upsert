@@ -30,7 +30,7 @@ do
 	echo "running $0 benchmark"
 	echo "trying $seconds second run ${bold}(new infrastructure, extended hwlocking)${normal}"
 	psql -c "drop table if exists foo;"
-	echo 'create unlogged table foo
+	echo 'create table foo
 	(
 	merge serial primary key,
 	b int4,
@@ -42,7 +42,7 @@ do
 	pgbench -f benchupdate.sql -c 8 -T $seconds -n -s $tuples
 	echo "trying $seconds second run ${bold}(traditional updates, equivalent to master)${normal}"
 	psql -c "drop table if exists foo;"
-	echo 'create unlogged table foo
+	echo 'create table foo
 	(
 	merge serial primary key,
 	b int4,

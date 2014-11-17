@@ -15,7 +15,7 @@ do
 	rand=`shuf -i 10-20 -n 1`
 	echo "trying $0 $rand second run"
 	psql -c "drop table if exists foo;"
-	echo 'create unlogged table foo
+	echo 'create table foo
 	(
 	merge text primary key,
 	b int4,

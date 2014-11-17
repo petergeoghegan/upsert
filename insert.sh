@@ -23,7 +23,7 @@ do
 	seconds=60
 	echo "trying $seconds second run ${bold}(new infrastructure, extended hwlocking)${normal}"
 	psql -c "drop table if exists foo;"
-	echo 'create unlogged table foo
+	echo 'create table foo
 	(
 	merge serial primary key,
 	b int4,
@@ -35,7 +35,7 @@ do
 	fi
 	echo "trying $seconds second run ${bold}(traditional inserts, equivalent to master)${normal}"
 	psql -c "drop table if exists foo;"
-	echo 'create unlogged table foo
+	echo 'create table foo
 	(
 	merge serial primary key,
 	b int4,

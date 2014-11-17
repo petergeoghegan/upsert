@@ -13,7 +13,7 @@ do
 	rand=`shuf -i 60-120 -n 1`
 	echo "trying $0 $rand second run"
 	psql -c "drop table if exists torture;"
-	echo 'create unlogged table torture
+	echo 'create table torture
 	(
 	a int4 primary key,
 	b int4 unique,
