@@ -8,6 +8,10 @@ upsert feature proposed for PostgreSQL.  Full details:
 
 https://commitfest.postgresql.org/action/patch_view?id=1564
 
+Good summary of current patch status:
+
+https://wiki.postgresql.org/wiki/UPSERT
+
 The tests also serve to give some rough sense of how different implementation
 compare, in terms of their performance characteristics (implementation #1 and #2).
 
