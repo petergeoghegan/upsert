@@ -5,6 +5,8 @@
 #
 # This benchmark appears to indicate that even with heavyweight page locks, the
 # performance of these two cases is remarkably similar
+#
+# Only useful for benchmarking, and so not called by main.sh
 if [[ $1 ]]; then
 	count=$1
 else

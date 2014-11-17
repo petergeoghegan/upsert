@@ -2,6 +2,8 @@
 #
 # Test upsert as a replacement for insert...no update part, for comparison
 # against raw insert for performance
+#
+# Only useful for benchmarking, and so not called by main.sh
 if [[ $1 ]]; then
 	count=$1
 else
