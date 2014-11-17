@@ -15,4 +15,4 @@
 \setrandom srecf 1 :extent
 \setrandom srecg 1 :extent
 \setrandom srecmerge 1 :extent
-insert into torture(a, b, c, d, e, f, g, merge, payload) values (:reca, :recb, :recc, :recd, :rece, :recf, :recg, :recmerge, 'insert'), (:sreca, :srecb, :srecc, :srecd, :srece, :srecf, :srecg, :srecmerge, 'insert') on conflict update set payload = (random() * 5);
+insert into torture(a, b, c, d, e, f, g, merge, payload) values (:reca, :recb, :recc, :recd, :rece, :recf, :recg, :recmerge, 'insert'), (:sreca, :srecb, :srecc, :srecd, :srece, :srecf, :srecg, :srecmerge, 'insert') on conflict (a) update set payload = (random() * 5);
