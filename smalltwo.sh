@@ -3,8 +3,9 @@
 # The point of this benchmark is in large part to get a sense of the
 # performance overhead of unnecessarily value locking a serial PK, where
 # presumably the sequential serial values represent a worse case for value
-# locking.  In the btree locking patch, we lock primary key last and release it
-# first, partly in anticipation of this problem.
+# locking.  In the btree locking approach to value locking (A.K.A. Approach
+# #1), we lock primary key last and release it first, partly in anticipation of
+# this problem.
 #
 # This variant of two benchmark tries to stress contention harder with a
 # smaller scale factor (though ordinary lock contention comes to dominate).
