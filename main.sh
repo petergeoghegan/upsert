@@ -7,7 +7,7 @@
 runs=3
 while [ 1 ]
 do
-	for f in simple.sh two.sh smalltwo.sh text.sh
+	for f in simple.sh two.sh smalltwo.sh text.sh cardinality.sh
 	do
 		./$f $runs
 		if [[ $? != 0 ]]; then
