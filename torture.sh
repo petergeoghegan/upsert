@@ -1,5 +1,7 @@
 #!/bin/bash
 #
+# Note that "torture" is no longer called by main.sh
+#
 if [[ $1 ]]; then
 	count=$1
 else
