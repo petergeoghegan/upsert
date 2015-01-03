@@ -42,3 +42,6 @@ The stress test "torture.sh" is mostly of historic interest.  The tests
 do basic benchmarking of each approach to value locking.  Alternatively, they
 can be used to compare with a baseline of "comparable" regular inserts or
 updates.
+
+exclusion.sh is intended to test exclusion constraints for problems with
+livelocking and unprincipled deadlocking.
